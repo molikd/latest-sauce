@@ -13,6 +13,29 @@ dir_setup () {
 	[ -d "$code_base_loc/$1" ] || (cd $code_base_loc && mkdir $1)
 }
 
+automated_download () {
+	dir_setup $1
+	echo "not implemented"
+}
+
+current_downloaded_version () {
+# just a tail in the working directory to get the latest commit/version/whatever
+# arg 1 is working directory name, this will always be the tool name, ex: annovar 
+	(cd "$/code_base_loc/$1" && tail -n 1 "${1}_data") 
+}
+
+eval_type () {
+# evaluates the type of code that we are working on, this is used in the automated download feature
+# arg 1 is working directory name, this will always be the tool name, ex: annovar 
+	eval code_type=\$"${1}_type"
+}
+
+eval_url () {
+# evaluates the url using the working directory name
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
+    eval code_url=\$"${1}_url"
+}
+
 #---------------#
 # Git Functions #
 #---------------#
@@ -24,15 +47,17 @@ git_update () {
 	(cd "$code_base_loc/$1" && git rev-parse HEAD >> "$code_base_loc/$1_git_data")
 }
 
+github_latest () {
+	echo "not implemented"
+}
+
+github_automated_download () {
+	echo "not implemented"
+}
+
 #----------------#
 # Wget Functions #
 #----------------#
-
-wget_url () {
-# evaluates the url using the working directory name
-# arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	eval code_url=\$"${1}_url"
-}
 
 wget_in_dir () {
 # wgets the code in the working direcory
@@ -41,3 +66,34 @@ wget_in_dir () {
     ( cd "$code_base_loc/$1" && wget $2  )
 }
 
+sourceforge_latest () {
+	echo "not implemented"
+}
+
+sourceforge_automted_download () {
+	echo "not implemented"
+}
+
+#----------------#
+# PyPi Functions #
+#----------------#
+
+pypi_latest () {
+	echo "not implemented"
+}
+
+pypi_automated_download () {
+	echo "not implemented"
+}
+
+#------------------------#
+# BitBucket Hg Functions #
+#------------------------#
+
+bitbucket_latest () {
+	echo "not implemented"
+}
+
+bitbucket_automated_download () {
+	echo "not implemented"
+}
