@@ -1,4 +1,5 @@
 #!/bin/bash
+# cufflinks is a git (github) type download
 
 source functions
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+# bowtie is a wget (sourceforge) type download
 
 source functions
 

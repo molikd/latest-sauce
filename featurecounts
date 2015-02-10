@@ -1,4 +1,6 @@
 #!/bin/bash
+# featurecounts (subreads) is a wget 
+# (sourceforge) download
 
 source functions
 

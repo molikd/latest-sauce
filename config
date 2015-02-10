@@ -2,8 +2,6 @@
 
 code_base_loc="/home/dmolik/latest-sauce"
 
-bash_map_latest_commit=""
-
 annovar_url=""
 bamtools_url=""
 bedtools_url=""

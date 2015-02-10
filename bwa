@@ -1,4 +1,5 @@
 #!/bin/bash
+# bwa is a wget (sourceforge) type download
 
 source functions
 

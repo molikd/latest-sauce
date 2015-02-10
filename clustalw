@@ -1,4 +1,5 @@
 #!/bin/bash
+# clustalw is wget (see publishers) download  
 
 source functions
 

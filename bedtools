@@ -1,4 +1,5 @@
 #!/bin/bash
+# bedtools is a git (github) type download
 
 source functions
 

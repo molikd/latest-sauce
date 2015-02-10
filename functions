@@ -11,7 +11,7 @@ dir_setup () {
 # Simple one line function to create a working directory if it doesn't already exist.
 # arg 1 is working directory name, this will always be the tool name, ex: annovar 
 	[ -d "$code_base_loc/$1" ] || (cd $code_base_loc && mkdir $1)
-}   
+}
 
 #---------------#
 # Git Functions #

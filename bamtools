@@ -1,4 +1,5 @@
 #!/bin/bash
+# bamtools is a git (github) type download
 
 source functions
 
