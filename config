@@ -1,4 +1,13 @@
 #!/bin/bash
 
+# this is where the files are going to be 
+# stored, remember that the config scripts nead to
+# be able to read the functions file and the 
+# functions file neads to be able to read the
+# config file
 code_base_loc="/home/dmolik/latest-sauce"
 
+# this sets types in the functions file if a type
+# is not set here, then automated download and 
+# type_check will fail
+types=(git_github wget_special wget_source_forge pypi hg_bitbucket)
