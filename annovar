@@ -6,3 +6,5 @@
 
 source functions
 
+annovar_url=""
+annovar_type=""

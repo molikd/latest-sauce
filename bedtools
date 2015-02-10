@@ -3,3 +3,5 @@
 
 source functions
 
+bedtools_url=""
+bedtools_type=""

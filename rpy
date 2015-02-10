@@ -3,3 +3,5 @@
 
 source functions
 
+rpy_url=""
+rpy_type=""

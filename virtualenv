@@ -3,3 +3,5 @@
 
 source functions
 
+virtualenv_url=""
+virtualenv_type=""

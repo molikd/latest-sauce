@@ -3,3 +3,5 @@
 
 source functions
 
+star_url=""
+star_type=""
