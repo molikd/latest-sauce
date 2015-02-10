@@ -5,3 +5,5 @@ source functions
 
 bowtie_url=""
 bowtie_type=""
+
+dir_setup bowtie

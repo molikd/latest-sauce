@@ -5,3 +5,5 @@ source functions
 
 weblogo3_url=""
 weblogo3_type=""
+
+dir_setup weblogo3

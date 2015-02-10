@@ -5,3 +5,5 @@ source functions
 
 memesuite_url=""
 memesuite_type=""
+
+dir_setup memesuite

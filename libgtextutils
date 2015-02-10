@@ -5,3 +5,5 @@ source functions
 
 libgtextutils_url=""
 libgtextutils_type=""
+
+dir_setup libgtextutils

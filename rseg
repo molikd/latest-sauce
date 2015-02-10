@@ -5,3 +5,5 @@ source functions
 
 rseg_url=""
 rseg_type=""
+
+dir_setup rseg

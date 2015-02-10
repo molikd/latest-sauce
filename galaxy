@@ -6,3 +6,5 @@ source functions
 
 galaxy_url=""
 galaxy_type=""
+
+dir_setup galaxy

@@ -5,3 +5,5 @@ source functions
 
 htseq_url=""
 htseq_type=""
+
+dir_setup htseq

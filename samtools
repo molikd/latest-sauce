@@ -5,3 +5,5 @@ source functions
 
 samtools_url=""
 samtools_type=""
+
+dir_setup samtools

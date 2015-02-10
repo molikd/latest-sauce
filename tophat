@@ -5,3 +5,5 @@ source functions
 
 tophat_url=""
 tophat_type=""
+
+dir_setup tophat

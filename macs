@@ -5,3 +5,5 @@ source functions
 
 macs_url=""
 macs_type=""
+
+dir_setup macs

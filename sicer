@@ -5,3 +5,5 @@ source functions
 
 sicer_url=""
 sicer_type=""
+
+dir_setup sicer

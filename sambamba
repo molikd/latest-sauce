@@ -5,3 +5,5 @@ source functions
 
 sambamba_url=""
 sambamba_type=""
+
+dir_setup sambamba

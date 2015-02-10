@@ -7,4 +7,6 @@
 source functions
 
 annovar_url=""
-annovar_type=""
+annovar_type="wget_special"
+
+dir_setup annovar

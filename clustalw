@@ -5,3 +5,5 @@ source functions
 
 clustalw_url=""
 clustalw_type=""
+
+dir_setup clustalw

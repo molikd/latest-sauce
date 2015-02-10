@@ -5,3 +5,5 @@ source functions
 
 tetoolkit_url=""
 tetoolkit_type=""
+
+dir_setup tetoolkit

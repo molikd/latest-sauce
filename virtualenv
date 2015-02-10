@@ -5,3 +5,5 @@ source functions
 
 virtualenv_url=""
 virtualenv_type=""
+
+dir_setup virtualenv

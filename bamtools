@@ -5,3 +5,5 @@ source functions
 
 bamtools_url=""
 bamtools_type=""
+
+dir_setup bamtools

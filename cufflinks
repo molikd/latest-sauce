@@ -5,3 +5,5 @@ source functions
 
 cufflinks_url=""
 cufflinks_type=""
+
+dir_setup cufflinks

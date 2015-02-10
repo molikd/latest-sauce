@@ -5,3 +5,5 @@ source functions
 
 bedtools2_url=""
 bedtools2_type=""
+
+dir_setup bedtools2

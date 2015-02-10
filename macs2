@@ -5,3 +5,5 @@ source functions
 
 macs2_url=""
 macs2_type=""
+
+dir_setup macs2

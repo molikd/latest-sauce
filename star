@@ -5,3 +5,5 @@ source functions
 
 star_url=""
 star_type=""
+
+dir_setup star

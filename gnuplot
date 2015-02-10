@@ -5,3 +5,5 @@ source functions
 
 gnuplot_url=""
 gnuplot_type=""
+
+dir_setup gnuplot
