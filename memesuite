@@ -1,4 +1,5 @@
 #!/bin/bash
+# memesuite is a wget (its own) download
 
 source functions
 

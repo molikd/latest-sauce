@@ -1,4 +1,5 @@
 #!/bin/bash
+# weblogo3 is a pypi download
 
 source functions
 

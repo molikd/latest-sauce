@@ -1,4 +1,5 @@
 #!/bin/bash
+# macs is a git (github) download
 
 source functions
 

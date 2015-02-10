@@ -1,4 +1,5 @@
 #!/bin/bash
+# subread is a wget (sourceforge) download
 
 source functions
 

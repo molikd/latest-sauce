@@ -1,4 +1,5 @@
 #!/bin/bash
+# virtualenv is a pypi package
 
 source functions
 

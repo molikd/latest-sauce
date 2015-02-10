@@ -1,4 +1,5 @@
 #!/bin/bash
+# tetoolkit is a pypi download
 
 source functions
 

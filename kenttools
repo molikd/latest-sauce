@@ -1,4 +1,5 @@
 #!/bin/bash
+# kent tools is a rsync
 
 source functions
 

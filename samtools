@@ -1,4 +1,5 @@
 #!/bin/bash
+# samtools is a wget (sourceforge) download
 
 source functions
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+# sambamba is a git (github) download
 
 source functions
 

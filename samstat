@@ -1,4 +1,5 @@
 #!/bin/bash
+# sam stat is a wget (sourceforge) download
 
 source functions
 

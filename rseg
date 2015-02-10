@@ -1,4 +1,5 @@
 #!/bin/bash
+# rseg is a wget (its own) download 
 
 source functions
 

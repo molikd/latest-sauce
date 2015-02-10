@@ -1,4 +1,6 @@
 #!/bin/bash
+# galaxy is a merical (bitbucket) download
 
 source functions
+
 

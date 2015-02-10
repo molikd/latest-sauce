@@ -1,4 +1,5 @@
 #!/bin/bash
+# sicer is a wget (its own) download
 
 source functions
 

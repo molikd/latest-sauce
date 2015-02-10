@@ -1,4 +1,5 @@
 #!/bin/bash
+# macs2 is a git (github) download
 
 source functions
 

@@ -1,4 +1,5 @@
 #!/bin/bash
+# pulsar is a git (github) download
 
 source functions
 

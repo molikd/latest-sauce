@@ -1,4 +1,5 @@
 #!/bin/bash
+# htseq is a pypi package (uses conversion)
 
 source functions
 
