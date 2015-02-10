@@ -18,6 +18,10 @@ automated_download () {
 	echo "not implemented"
 }
 
+check_type () {
+	echo "not implemented"
+}
+
 current_downloaded_version () {
 # just a tail in the working directory to get the latest commit/version/whatever
 # arg 1 is working directory name, this will always be the tool name, ex: annovar 
