@@ -4,8 +4,7 @@ source config
 
 git_update () {
 	(cd "$code_base_loc/$1" && git pull)
-	parsed_head=$(cd "$code_base_loc/$1" && git rev-parse HEAD)
-	sed -e "s/$1_latest_commit/$1_latest_commit=\"$parsed_head\"/" config
+	(cd "$code_base_loc/$1" && git rev-parse HEAD >> "$code_base_loc/$1_git_data")
 }
 
 wget_update () {
