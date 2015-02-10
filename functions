@@ -1,17 +1,43 @@
 #!/bin/bash
 
 source config
+# config is where data is stored for the functions file, this is in the form of Bash variables
+
+#-------------------#
+# General Functions #
+#-------------------#
+
+dir_setup () {
+# Simple one line function to create a working directory if it doesn't already exist.
+# arg 1 is working directory name, this will always be the tool name, ex: annovar 
+	[ -d "$code_base_loc/$1" ] || (cd $code_base_loc && mkdir $1)
+}   
+
+#---------------#
+# Git Functions #
+#---------------#
 
 git_update () {
-	(cd "$code_base_loc/$1" && git pull)
+# Updates the git repo holding the code 
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
+	(cd "$code_base_loc/$1/$2" && git pull)
 	(cd "$code_base_loc/$1" && git rev-parse HEAD >> "$code_base_loc/$1_git_data")
 }
 
-wget_update () {
+#----------------#
+# Wget Functions #
+#----------------#
+
+wget_url () {
+# evaluates the url using the working directory name
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
 	eval code_url=\$"${1}_url"
-	( cd "$code_base_loc/$1" && wget $code_url  )
 }
 
-github_latest_version () {
-	echo "derp"
+wget_in_dir () {
+# wgets the code in the working direcory
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
+# arg 2 is the complete url to the pacakge
+    ( cd "$code_base_loc/$1" && wget $2  )
 }
+
