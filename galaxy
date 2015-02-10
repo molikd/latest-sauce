@@ -1,5 +1,5 @@
 #!/bin/bash
-# galaxy is a merical (bitbucket) download
+# galaxy is a hg (bitbucket) download
 
 source functions
 
