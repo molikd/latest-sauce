@@ -74,7 +74,7 @@ sourceforge_latest () {
 	echo "not implemented"
 }
 
-sourceforge_automted_download () {
+sourceforge_automated_download () {
 	echo "not implemented"
 }
 
