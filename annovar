@@ -2,7 +2,7 @@
 # annovar is special, we are going to fake a wget 
 # and build it only once, if you want new versions
 # tell the biobase people to properly publish 
-# there code.  
+# their code.  
 
 source functions
 
