@@ -107,7 +107,7 @@ github_latest () {
 
 github_automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	if [ $(current_download_version $1) -ne $(rsync_latest $1) ]; then
+	if [ $(current_download_version $1) -ne $(github_latest $1) ]; then
 		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
 	else
 		post_to_log "no new code found for $1, good jerb"
@@ -132,7 +132,7 @@ sourceforge_latest () {
 
 sourceforge_automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	if [ $(current_download_version $1) -ne $(rsync_latest $1) ]; then
+	if [ $(current_download_version $1) -ne $(sourceforge_latest $1) ]; then
 		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
 	else
 		post_to_log "no new code found for $1, good jerb"
@@ -150,7 +150,7 @@ pypi_latest () {
 
 pypi_automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	if [ $(current_download_version $1) -ne $(rsync_latest $1) ]; then
+	if [ $(current_download_version $1) -ne $(pypi_latest $1) ]; then
 		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
 	else
 		post_to_log "no new code found for $1, good jerb"
@@ -168,7 +168,7 @@ bitbucket_latest () {
 
 bitbucket_automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	if [ $(current_download_version $1) -ne $(rsync_latest $1) ]; then
+	if [ $(current_download_version $1) -ne $(bitbucket_latest $1) ]; then
 		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
 	else
 		post_to_log "no new code found for $1, good jerb"
