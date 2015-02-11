@@ -107,7 +107,11 @@ github_latest () {
 
 github_automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	echo "not implemented"
+	if [ $(current_download_version $1) -ne $(rsync_latest $1) ]; then
+		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
+	else
+		post_to_log "no new code found for $1, good jerb"
+	fi  
 }
 
 #----------------#
@@ -128,7 +132,11 @@ sourceforge_latest () {
 
 sourceforge_automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	echo "not implemented"
+	if [ $(current_download_version $1) -ne $(rsync_latest $1) ]; then
+		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
+	else
+		post_to_log "no new code found for $1, good jerb"
+	fi  
 }
 
 #----------------#
@@ -142,7 +150,11 @@ pypi_latest () {
 
 pypi_automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	echo "not implemented"
+	if [ $(current_download_version $1) -ne $(rsync_latest $1) ]; then
+		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
+	else
+		post_to_log "no new code found for $1, good jerb"
+	fi  
 }
 
 #------------------------#
@@ -156,7 +168,11 @@ bitbucket_latest () {
 
 bitbucket_automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	echo "not implemented"
+	if [ $(current_download_version $1) -ne $(rsync_latest $1) ]; then
+		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
+	else
+		post_to_log "no new code found for $1, good jerb"
+	fi  
 }
 
 #-----------------#
@@ -170,7 +186,11 @@ rsync_latest () {
 
 rsync_automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
-    echo "not implemented"
+	if [ $(current_download_version $1) -ne $(rsync_latest $1) ]; then
+		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
+	else
+		post_to_log "no new code found for $1, good jerb"
+	fi
 }
 
 #---------------#
@@ -187,7 +207,7 @@ log_check () {
 	else
 		echo "error: \$logging is set to \"$logging\" which is not valid, quiting"
 		break
-fi
+	fi
 }
 
 post_to_error () {
