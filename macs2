@@ -3,8 +3,8 @@
 
 source functions
 
-macs2_url="api.github.com/repos/"
-macs2_type="git_github"
-macs2_user="taoliu"
+macs_url="api.github.com/repos/"
+macs_type="git_github"
+macs_user="taoliu"
 
 automated_download "macs"
