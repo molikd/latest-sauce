@@ -10,28 +10,45 @@ source config
 dir_setup () {
 # Simple one line function to create a working directory if it doesn't already exist.
 # arg 1 is working directory name, this will always be the tool name, ex: annovar 
-	[ -d "$code_base_loc/$1" ] || (cd $code_base_loc && mkdir $1)
+	if [ -d "$code_base_loc/$1" ]; then
+		post_to_log "checked for directory for $1, it exists"
+		exit
+	else
+		(cd $code_base_loc && mkdir $1)
+		post_to_log "created directory for $1"
+	fi;
 }
 
 automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	dir_setup $1
+	working_dir=$1
 	eval_type; eval_url; eval_user;
 	
+	log_check
+	dir_setup "$working_dir"
+
 	case "$code_type" in
-	"git_github" ) echo "not implemented"
+	"git_github" ) 
+		post_to_log "we have a $code_type, attempting an automatic download"
 	;;
-	"wget_special" ) echo "not implemented"
+	"wget_special" ) 
+		post_to_log "we have a $code_type, attempting an automatic download"
 	;;
-	"wget_source_forge" ) echo "not implemented"
+	"wget_source_forge" ) 
+		post_to_log "we have a $code_type, attempting an automatic download"
 	;;
-	"pypi" ) echo "not implemented"
+	"pypi" ) 
+		post_to_log "we have a $code_type, attempting an automatic download"
 	;;
-	"hg_bitbucket" ) echo "not implemented"
+	"hg_bitbucket" ) 
+		post_to_log "we have a $code_type, attempting an automatic download"
 	;;
-	"rsync" ) echo "not implemented"
+	"rsync" ) 
+		post_to_log "we have a $code_type, attempting an automatic download"
 	;;
-	* )	echo "not implemented"
+	* )	
+		post_to_error "code type $code_type does not exist, not source downloaded, exiting"
+		break
 	;;
 	esac
 }
@@ -145,13 +162,22 @@ bitbucket_automated_download () {
 #---------------#
 
 log_check () {
-	echo "not implemented"
+#doesn't take any arguments, just checks to make sure that logging is going to work, or its off. 
+if [ $logging = "on" ]; then
+	[ -d $log_file ] || echo "error: log directory \"$log_file\" (log files) not found, quiting"; break
+	[ -d $error_file ] || echo "error: log directory \"$error_file\" (error files) not found, quiting"; break
+elif [ -z $logging ]; then
+	echo "ok... no logging then"
+else
+	echo "error: \$logging is set to \"$logging\" which is not valid, quiting"
+	break
+fi
 }
 
 post_to_error () {
-	echo "not implemented"
+	echo "[$(date)]: $0 $1" >> "$log_file/latest_sauce_$(date +%e_%m_%Y)"
 }
 
 post_to_log () {
-	echo "not implemented"
+	echo "[$(date)]: $0 $1" >> "$error_file/latest_sauce_err_$(date +%e_%m_%Y)"
 }
