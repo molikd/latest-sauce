@@ -4,6 +4,6 @@
 source functions
 
 pulsar_url=""
-pulsar_type=""
+pulsar_type="git_github"
 
-dir_setup pulsar
+automated_downlaod pulsar

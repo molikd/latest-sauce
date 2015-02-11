@@ -14,11 +14,13 @@ dir_setup () {
 }
 
 automated_download () {
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
 	dir_setup $1
 	echo "not implemented"
 }
 
 check_type () {
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
 	echo "not implemented"
 }
 
@@ -51,11 +53,18 @@ git_update () {
 	(cd "$code_base_loc/$1" && git rev-parse HEAD >> "$code_base_loc/$1_git_data")
 }
 
+github_download_tar () {
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
+	echo "not implemented"
+}
+
 github_latest () {
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
 	echo "not implemented"
 }
 
 github_automated_download () {
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
 	echo "not implemented"
 }
 
@@ -71,10 +80,12 @@ wget_in_dir () {
 }
 
 sourceforge_latest () {
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
 	echo "not implemented"
 }
 
 sourceforge_automated_download () {
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
 	echo "not implemented"
 }
 
@@ -83,10 +94,12 @@ sourceforge_automated_download () {
 #----------------#
 
 pypi_latest () {
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
 	echo "not implemented"
 }
 
 pypi_automated_download () {
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
 	echo "not implemented"
 }
 
@@ -95,9 +108,11 @@ pypi_automated_download () {
 #------------------------#
 
 bitbucket_latest () {
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
 	echo "not implemented"
 }
 
 bitbucket_automated_download () {
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
 	echo "not implemented"
 }

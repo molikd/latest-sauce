@@ -10,4 +10,4 @@ code_base_loc="/home/dmolik/latest-sauce"
 # this sets types in the functions file if a type
 # is not set here, then automated download and 
 # type_check will fail
-types=(git_github wget_special wget_source_forge pypi hg_bitbucket)
+types=(git_github wget_special wget_source_forge pypi hg_bitbucket rsync)

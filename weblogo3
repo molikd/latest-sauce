@@ -4,6 +4,6 @@
 source functions
 
 weblogo3_url=""
-weblogo3_type=""
+weblogo3_type="pypi"
 
-dir_setup weblogo3
+automated_download weblogo3

@@ -4,6 +4,6 @@
 source functions
 
 cutadapt_url=""
-cutadapt_type=""
+cutadapt_type="git_github"
 
-dir_setup cutadapt
+automated_download cutadapt

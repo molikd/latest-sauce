@@ -4,6 +4,6 @@
 source functions
 
 macs_url=""
-macs_type=""
+macs_type="git_github"
 
-dir_setup macs
+automated_download macs

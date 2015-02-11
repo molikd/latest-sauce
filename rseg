@@ -4,6 +4,6 @@
 source functions
 
 rseg_url=""
-rseg_type=""
+rseg_type="wget_special"
 
-dir_setup rseg
+automated_download rseg

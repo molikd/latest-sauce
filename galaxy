@@ -5,6 +5,6 @@ source functions
 
 
 galaxy_url=""
-galaxy_type=""
+galaxy_type="hg_bitbucket"
 
-dir_setup galaxy
+automated_download galaxy

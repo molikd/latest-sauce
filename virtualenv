@@ -4,6 +4,6 @@
 source functions
 
 virtualenv_url=""
-virtualenv_type=""
+virtualenv_type="pypi"
 
-dir_setup virtualenv
+automated_download virtualenv

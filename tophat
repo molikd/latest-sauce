@@ -4,6 +4,6 @@
 source functions
 
 tophat_url=""
-tophat_type=""
+tophat_type="wget_special"
 
-dir_setup tophat
+automated_download tophat

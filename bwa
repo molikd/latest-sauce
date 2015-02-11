@@ -4,6 +4,6 @@
 source functions
 
 bwa_url=""
-bwa_type=""
+bwa_type="wget_source_forge"
 
-dir_setup bwa
+automated_download bwa

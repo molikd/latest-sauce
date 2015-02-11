@@ -4,6 +4,6 @@
 source functions
 
 bamtools_url=""
-bamtools_type=""
+bamtools_type="git_github"
 
-dir_setup bamtools
+automated_download bamtools

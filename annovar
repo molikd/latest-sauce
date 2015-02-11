@@ -9,4 +9,4 @@ source functions
 annovar_url=""
 annovar_type="wget_special"
 
-dir_setup annovar
+automated_download annovar

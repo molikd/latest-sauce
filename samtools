@@ -4,6 +4,6 @@
 source functions
 
 samtools_url=""
-samtools_type=""
+samtools_type="wget_source_forge"
 
-dir_setup samtools
+automated_download samtools

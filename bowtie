@@ -4,6 +4,6 @@
 source functions
 
 bowtie_url=""
-bowtie_type=""
+bowtie_type="wget_source_forge"
 
-dir_setup bowtie
+automated_download bowtie

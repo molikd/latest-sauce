@@ -4,6 +4,6 @@
 source functions
 
 samstat_url=""
-samstat_type=""
+samstat_type="wget_special_forge"
 
-dir_setup samstat
+automated_download samstat

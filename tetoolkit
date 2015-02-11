@@ -4,6 +4,6 @@
 source functions
 
 tetoolkit_url=""
-tetoolkit_type=""
+tetoolkit_type="pypi"
 
-dir_setup tetoolkit
+automated_download tetoolkit

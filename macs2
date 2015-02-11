@@ -4,6 +4,6 @@
 source functions
 
 macs2_url=""
-macs2_type=""
+macs2_type="git_github"
 
-dir_setup macs2
+automated_download macs2

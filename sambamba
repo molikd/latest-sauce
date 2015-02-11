@@ -4,6 +4,6 @@
 source functions
 
 sambamba_url=""
-sambamba_type=""
+sambamba_type="git_github"
 
-dir_setup sambamba
+automated_download sambamba

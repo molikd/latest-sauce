@@ -4,6 +4,6 @@
 source functions
 
 kenttools_url=""
-kenttools_type=""
+kenttools_type="rsync"
 
-dir_setup kenttools
+automated_download kenttools

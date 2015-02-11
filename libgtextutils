@@ -4,6 +4,6 @@
 source functions
 
 libgtextutils_url=""
-libgtextutils_type=""
+libgtextutils_type="git_github"
 
-dir_setup libgtextutils
+automated_download libgtextutils

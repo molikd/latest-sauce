@@ -4,6 +4,6 @@
 source functions
 
 rpy_url=""
-rpy_type=""
+rpy_type="pypi"
 
-dir_setup rpy
+automated_download rpy

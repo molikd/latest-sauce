@@ -4,6 +4,6 @@
 source functions
 
 cufflinks_url=""
-cufflinks_type=""
+cufflinks_type="git_github"
 
-dir_setup cufflinks
+automated_download cufflinks

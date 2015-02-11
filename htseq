@@ -4,6 +4,6 @@
 source functions
 
 htseq_url=""
-htseq_type=""
+htseq_type="pypi"
 
-dir_setup htseq
+automated_download htseq

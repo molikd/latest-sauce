@@ -4,6 +4,6 @@
 source functions
 
 subread_url=""
-subread_type=""
+subread_type="wget_source_forge"
 
-dir_setup subread
+automated_download subread

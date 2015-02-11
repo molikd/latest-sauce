@@ -4,6 +4,6 @@
 source functions
 
 gnuplot_url=""
-gnuplot_type=""
+gnuplot_type="wget_source_forge"
 
-dir_setup gnuplot
+automated_download gnuplot

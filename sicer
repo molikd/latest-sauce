@@ -4,6 +4,6 @@
 source functions
 
 sicer_url=""
-sicer_type=""
+sicer_type="wget_special"
 
-dir_setup sicer
+automated_download sicer

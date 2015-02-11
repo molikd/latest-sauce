@@ -4,6 +4,6 @@
 source functions
 
 memesuite_url=""
-memesuite_type=""
+memesuite_type="wget_special"
 
-dir_setup memesuite
+automated_download memesuite

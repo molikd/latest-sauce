@@ -4,6 +4,6 @@
 source functions
 
 fastx_toolkit_url=""
-fastx_toolkit_type=""
+fastx_toolkit_type="git_github"
 
-dir_setup fastx_toolkit
+automated_download fastx_toolkit

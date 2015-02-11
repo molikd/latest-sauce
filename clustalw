@@ -4,6 +4,6 @@
 source functions
 
 clustalw_url=""
-clustalw_type=""
+clustalw_type="wget_special"
 
-dir_setup clustalw
+automated_download clustalw

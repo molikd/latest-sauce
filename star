@@ -4,6 +4,6 @@
 source functions
 
 star_url=""
-star_type=""
+star_type="git_github"
 
-dir_setup star
+automated_download star
