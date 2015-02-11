@@ -175,24 +175,6 @@ bitbucket_automated_download () {
 	fi  
 }
 
-#-----------------#
-# Rsync Fucntions #
-#-----------------#
-
-rsync_latest () {
-# arg 1 is the working directory name, this will always be the tool name, ex: annovar
-    echo "not implemented"
-}
-
-rsync_automated_download () {
-# arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	if [ $(current_download_version $1) -ne $(rsync_latest $1) ]; then
-		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
-	else
-		post_to_log "no new code found for $1, good jerb"
-	fi
-}
-
 #---------------#
 # Log Functions #
 #---------------#

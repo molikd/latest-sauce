@@ -3,8 +3,8 @@
 
 source functions
 
-tophat_url=""
+tophat_url="ccb.jhu.edu/software/tophat/downloads/"
 tophat_type="wget_special"
-tophat_user=""
+tophat_user="tphat"
 
-automated_download tophat
+automated_download "tophat"

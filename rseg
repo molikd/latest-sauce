@@ -3,8 +3,8 @@
 
 source functions
 
-rseg_url=""
+rseg_url="smithlabresearch.org/downloads/"
 rseg_type="wget_special"
-rseg__user=""
+rseg__user="rseg"
 
-automated_download rseg
+automated_download "rseg"

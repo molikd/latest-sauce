@@ -3,8 +3,8 @@
 
 source functions
 
-sicer_url=""
+sicer_url="home.gwu.edu/~wpeng/Software.htm"
 sicer_type="wget_special"
-sicer_user=""
+sicer_user="sicer"
 
-automated_download sicer
+automated_download "sicer"

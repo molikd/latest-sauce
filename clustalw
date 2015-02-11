@@ -3,8 +3,8 @@
 
 source functions
 
-clustalw_url=""
+clustalw_url="www.clustal.org/download/current/"
 clustalw_type="wget_special"
 clustalw_user=""
 
-automated_download clustalw
+automated_download "clustalw"

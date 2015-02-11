@@ -3,8 +3,8 @@
 
 source functions
 
-kenttools_url=""
-kenttools_type="rsync"
+kenttools_url="hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/"
+kenttools_type="wget_special"
 kenttools_user=""
 
-automated_download kenttools
+automated_download "kenttools"
