@@ -4,8 +4,8 @@
 source functions
 
 
-galaxy_url=""
+galaxy_url="api.bitbucket.org/2.0/repositories/galaxy/"
 galaxy_type="hg_bitbucket"
-galaxy_user=""
+galaxy_user="galaxy-dist"
 
-automated_download galaxy
+automated_download "galaxy"
