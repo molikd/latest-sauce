@@ -3,8 +3,8 @@
 
 source functions
 
-gnuplot_url=""
+gnuplot_url="sourceforge.net/projects/"
 gnuplot_type="wget_source_forge"
-gnuplot_user=""
+gnuplot_user="gnuplot"
 
-automated_download gnuplot
+automated_download "gnuplot"

@@ -3,8 +3,8 @@
 
 source functions
 
-samstat_url=""
+samstat_url="sourceforge.net/projects/"
 samstat_type="wget_special_forge"
-samstat_user=""
+samstat_user="samstat"
 
-automated_download samstat
+automated_download "samstat"

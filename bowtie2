@@ -3,8 +3,8 @@
 
 source functions
 
-bowtie2_url=""
+bowtie2_url="sourceforge.net/projects/"
 bowtie2_type="wget_source_forge"
-bowtie2_user=""
+bowtie2_user="bowtie-bio"
 
-automated_download bowtie2
+automated_download "bowtie2"

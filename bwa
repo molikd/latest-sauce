@@ -3,8 +3,8 @@
 
 source functions
 
-bwa_url=""
+bwa_url="sourceforge.net/projects/"
 bwa_type="wget_source_forge"
-bwa_user=""
+bwa_user="bio-bwa"
 
-automated_download bwa
+automated_download "bwa"

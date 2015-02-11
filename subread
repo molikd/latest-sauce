@@ -3,8 +3,8 @@
 
 source functions
 
-subread_url=""
+subread_url="sourceforge.net/projects/"
 subread_type="wget_source_forge"
-subread_user=""
+subread_user="subread"
 
-automated_download subread
+automated_download "subread"

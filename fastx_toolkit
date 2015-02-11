@@ -7,4 +7,4 @@ fastx_toolkit_url="api.github.com/repos/"
 fastx_toolkit_type="git_github"
 fastx_toolkit_user="Debian"
 
-automated_download "fastx-toolkit"
+automated_download "fastx_toolkit"
