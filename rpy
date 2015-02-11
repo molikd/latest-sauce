@@ -3,8 +3,8 @@
 
 source functions
 
-rpy_url=""
+rpy_url="https://pypi.python.org/pypi/"
 rpy_type="pypi"
-rpy_user=""
+rpy_user="rpy"
 
-automated_download rpy
+automated_download "rpy"

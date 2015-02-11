@@ -3,8 +3,8 @@
 
 source functions
 
-htseq_url=""
+htseq_url="pypi.python.org/pypi/"
 htseq_type="pypi"
-htseq_user=""
+htseq_user="HTSeq"
 
-automated_download htseq
+automated_download "htseq"

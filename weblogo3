@@ -3,8 +3,8 @@
 
 source functions
 
-weblogo3_url=""
+weblogo3_url="pypi.python.org/pypi/"
 weblogo3_type="pypi"
-weblogo3_user=""
+weblogo3_user="weblogo"
 
-automated_download weblogo3
+automated_download "weblogo3"

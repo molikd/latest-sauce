@@ -3,8 +3,8 @@
 
 source functions
 
-virtualenv_url=""
+virtualenv_url="pypi.python.org/pypi/"
 virtualenv_type="pypi"
-virtualenv_user=""
+virtualenv_user="virtualenv"
 
-automated_download virtualenv
+automated_download "virtualenv"
