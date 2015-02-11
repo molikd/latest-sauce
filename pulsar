@@ -5,5 +5,6 @@ source functions
 
 pulsar_url=""
 pulsar_type="git_github"
+pulsar_user=""
 
 automated_downlaod pulsar

@@ -5,5 +5,6 @@ source functions
 
 virtualenv_url=""
 virtualenv_type="pypi"
+virtualenv_user=""
 
 automated_download virtualenv

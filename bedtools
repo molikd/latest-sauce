@@ -5,5 +5,6 @@ source functions
 
 bedtools_url=""
 bedtools_type="git_github"
+bedtools_user=""
 
 automated_download bedtools

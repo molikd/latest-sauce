@@ -5,5 +5,6 @@ source functions
 
 tophat_url=""
 tophat_type="wget_special"
+tophat_user=""
 
 automated_download tophat

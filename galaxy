@@ -6,5 +6,6 @@ source functions
 
 galaxy_url=""
 galaxy_type="hg_bitbucket"
+galaxy_user=""
 
 automated_download galaxy

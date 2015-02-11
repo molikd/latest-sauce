@@ -5,5 +5,6 @@ source functions
 
 cutadapt_url=""
 cutadapt_type="git_github"
+cutadapt_user=""
 
 automated_download cutadapt

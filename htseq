@@ -5,5 +5,6 @@ source functions
 
 htseq_url=""
 htseq_type="pypi"
+htseq_user=""
 
 automated_download htseq

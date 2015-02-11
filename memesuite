@@ -5,5 +5,6 @@ source functions
 
 memesuite_url=""
 memesuite_type="wget_special"
+memesuite_user=""
 
 automated_download memesuite

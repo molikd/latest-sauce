@@ -5,5 +5,6 @@ source functions
 
 libgtextutils_url=""
 libgtextutils_type="git_github"
+libgtextutils_user=""
 
 automated_download libgtextutils

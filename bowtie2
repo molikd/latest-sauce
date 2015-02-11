@@ -5,5 +5,6 @@ source functions
 
 bowtie2_url=""
 bowtie2_type="wget_source_forge"
+bowtie2_user=""
 
 automated_download bowtie2

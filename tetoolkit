@@ -5,5 +5,6 @@ source functions
 
 tetoolkit_url=""
 tetoolkit_type="pypi"
+tetoolkit_user=""
 
 automated_download tetoolkit

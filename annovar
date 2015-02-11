@@ -8,5 +8,6 @@ source functions
 
 annovar_url=""
 annovar_type="wget_special"
+annovar_user=""
 
 automated_download annovar
