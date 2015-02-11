@@ -16,7 +16,24 @@ dir_setup () {
 automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
 	dir_setup $1
-	echo "not implemented"
+	eval_type; eval_url; eval_user;
+	
+	case "$code_type" in
+	"git_github" ) echo "not implemented"
+	;;
+	"wget_special" ) echo "not implemented"
+	;;
+	"wget_source_forge" ) echo "not implemented"
+	;;
+	"pypi" ) echo "not implemented"
+	;;
+	"hg_bitbucket" ) echo "not implemented"
+	;;
+	"rsync" ) echo "not implemented"
+	;;
+	* )	echo "not implemented"
+	;;
+	esac
 }
 
 check_type () {
@@ -40,6 +57,12 @@ eval_url () {
 # evaluates the url using the working directory name
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
     eval code_url=\$"${1}_url"
+}
+
+eval_user () {
+# evaluates the user using the working directory name
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
+	eval code_user=\$"{1}_user"
 }
 
 #---------------#
@@ -114,5 +137,21 @@ bitbucket_latest () {
 
 bitbucket_automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
+	echo "not implemented"
+}
+
+#---------------#
+# Log Functions #
+#---------------#
+
+log_check () {
+	echo "not implemented"
+}
+
+post_to_error () {
+	echo "not implemented"
+}
+
+post_to_log () {
 	echo "not implemented"
 }

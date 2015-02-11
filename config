@@ -11,3 +11,18 @@ code_base_loc="/home/dmolik/latest-sauce"
 # is not set here, then automated download and 
 # type_check will fail
 types=(git_github wget_special wget_source_forge pypi hg_bitbucket rsync)
+
+# this turns on logging
+# options are "on" and empty (off) all other 
+# things will error
+logging="on"
+
+# this sets the log file directory that general
+# use will post to. logs are automatically split 
+# by day
+log_file="/home/dmolik/latest-sauce"
+
+# this sets the log file directory that errors 
+# will post to. logs are automatically split by
+# day
+error_file="/home/dmolik/latest-sauce"
