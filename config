@@ -15,7 +15,7 @@ types=(git_github wget_special wget_source_forge pypi hg_bitbucket rsync)
 # this turns on logging
 # options are "on" and empty (off) all other 
 # things will error
-logging="on"
+logging=""
 
 # this sets the log file directory that general
 # use will post to. logs are automatically split 

@@ -21,41 +21,43 @@ dir_setup () {
 
 automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	working_dir=$1
 	eval_type; eval_url; eval_user;
 	
 	log_check
-	dir_setup "$working_dir"
+	dir_setup "$1"
+
+	post_to_log "we have $code_type, $code_url, and $code_user to download"
 
 	case "$code_type" in
 	"git_github" ) 
-		post_to_log "we have a $code_type, attempting an automatic download"
+		post_to_log "I noticed we have a $code_type, attempting an automatic download"
+		github_automated_download $1
 	;;
 	"wget_special" ) 
-		post_to_log "we have a $code_type, attempting an automatic download"
+		post_to_log "I noticed we have a $code_type, attempting an automatic download"
+		wget_in_dir $1
 	;;
 	"wget_source_forge" ) 
-		post_to_log "we have a $code_type, attempting an automatic download"
+		post_to_log "I noticed we have a $code_type, attempting an automatic download"
+		sourceforge_automated_download $1
 	;;
 	"pypi" ) 
-		post_to_log "we have a $code_type, attempting an automatic download"
+		post_to_log "I noticed we have a $code_type, attempting an automatic download"
+		pypi_automated_download $1
 	;;
 	"hg_bitbucket" ) 
-		post_to_log "we have a $code_type, attempting an automatic download"
+		post_to_log "I noticed we have a $code_type, attempting an automatic download"
+		bitbucket_automated_download $1
 	;;
 	"rsync" ) 
-		post_to_log "we have a $code_type, attempting an automatic download"
+		post_to_log "I noticed we have a $code_type, attempting an automatic download"
+		rsync_automated_download $1
 	;;
 	* )	
 		post_to_error "code type $code_type does not exist, not source downloaded, exiting"
 		break
 	;;
 	esac
-}
-
-check_type () {
-# arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	echo "not implemented"
 }
 
 current_downloaded_version () {
@@ -115,8 +117,8 @@ github_automated_download () {
 wget_in_dir () {
 # wgets the code in the working direcory
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
-# arg 2 is the complete url to the pacakge
-    ( cd "$code_base_loc/$1" && wget $2  )
+    ( cd "$code_base_loc/$1" && wget $code_url )
+	post_to_log "wget on the code for $1"
 }
 
 sourceforge_latest () {
@@ -157,27 +159,43 @@ bitbucket_automated_download () {
 	echo "not implemented"
 }
 
+#-----------------#
+# Rsync Fucntions #
+#-----------------#
+
+rsync_latest () {
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
+    echo "not implemented"
+}
+
+rsync_automated_download () {
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
+    echo "not implemented"
+}
+
 #---------------#
 # Log Functions #
 #---------------#
 
 log_check () {
 #doesn't take any arguments, just checks to make sure that logging is going to work, or its off. 
-if [ $logging = "on" ]; then
-	[ -d $log_file ] || echo "error: log directory \"$log_file\" (log files) not found, quiting"; break
-	[ -d $error_file ] || echo "error: log directory \"$error_file\" (error files) not found, quiting"; break
-elif [ -z $logging ]; then
-	echo "ok... no logging then"
-else
-	echo "error: \$logging is set to \"$logging\" which is not valid, quiting"
-	break
+	if [ "$logging" = "on" ]; then
+		[ -d "$log_file" ] || echo "error: log directory \"$log_file\" (log files) not found, quiting"; break
+		[ -d "$error_file" ] || echo "error: log directory \"$error_file\" (error files) not found, quiting"; break
+	elif [ -z "$logging" ]; then
+		echo "ok... no logging then"
+	else
+		echo "error: \$logging is set to \"$logging\" which is not valid, quiting"
+		break
 fi
 }
 
 post_to_error () {
-	echo "[$(date)]: $0 $1" >> "$log_file/latest_sauce_$(date +%e_%m_%Y)"
+	[ "$logging" = "on" ] &&  echo "[$(date)]: $1" >> "$log_file/latest_sauce_$(date +%e_%m_%Y)"
+	[ -z "$logging" ] &&  echo "[$(date)]: $1"
 }
 
 post_to_log () {
-	echo "[$(date)]: $0 $1" >> "$error_file/latest_sauce_err_$(date +%e_%m_%Y)"
+	[ "$logging" = "on" ] && echo "[$(date)]: $1" >> "$error_file/latest_sauce_err_$(date +%e_%m_%Y)"
+	[ -z "$logging" ] &&  echo "[$(date)]: $1"
 }
