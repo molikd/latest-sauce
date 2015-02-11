@@ -3,8 +3,8 @@
 
 source functions
 
-cufflinks_url=""
+cufflinks_url="api.github.com/repos/"
 cufflinks_type="git_github"
-cufflinks_user=""
+cufflinks_user="cole-trapnell-lab"
 
-automated_download cufflinks
+automated_download "Cufflinks"

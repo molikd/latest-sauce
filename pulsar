@@ -3,8 +3,8 @@
 
 source functions
 
-pulsar_url=""
+pulsar_url="api.github.com/repos/"
 pulsar_type="git_github"
-pulsar_user=""
+pulsar_user="galaxyproject"
 
-automated_downlaod pulsar
+automated_downlaod "pulsar"

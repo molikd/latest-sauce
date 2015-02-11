@@ -3,8 +3,8 @@
 
 source functions
 
-bedtools2_url=""
+bedtools2_url="api.github.com/repos/"
 bedtools2_type="git_github"
-bedtools2_user=""
+bedtools2_user="arq5x"
 
-automated_download bedtools2
+automated_download "bedtools2"

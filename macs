@@ -4,7 +4,7 @@
 source functions
 
 macs_url=""
-macs_type="git_github"
+macs_type="wget_special"
 macs_user=""
 
 automated_download macs

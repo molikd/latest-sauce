@@ -3,8 +3,8 @@
 
 source functions
 
-libgtextutils_url=""
+libgtextutils_url="api.github.com/repos/"
 libgtextutils_type="git_github"
-libgtextutils_user=""
+libgtextutils_user="Debian"
 
-automated_download libgtextutils
+automated_download "libgtextutils"

@@ -3,8 +3,8 @@
 
 source functions
 
-sambamba_url=""
+sambamba_url="api.github.com/repos/"
 sambamba_type="git_github"
-sambamba_user=""
+sambamba_user="lomereiter"
 
-automated_download sambamba
+automated_download "sambamba"

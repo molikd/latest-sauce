@@ -3,8 +3,8 @@
 
 source functions
 
-star_url=""
+star_url="api.github.com/repos/"
 star_type="git_github"
-star_user=""
+star_user="lexdobin"
 
-automated_download star
+automated_download STAR

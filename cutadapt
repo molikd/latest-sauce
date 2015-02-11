@@ -3,8 +3,8 @@
 
 source functions
 
-cutadapt_url=""
+cutadapt_url="api.github.com/repos/"
 cutadapt_type="git_github"
-cutadapt_user=""
+cutadapt_user="marcelm"
 
-automated_download cutadapt
+automated_download "cutadapt"

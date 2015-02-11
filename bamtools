@@ -3,8 +3,8 @@
 
 source functions
 
-bamtools_url=""
+bamtools_url="api.github.com/repos/"
 bamtools_type="git_github"
-bamtools_user=""
+bamtools_user="pezmaster31"
 
 automated_download bamtools
