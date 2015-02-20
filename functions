@@ -29,10 +29,6 @@ automated_download () {
 	post_to_log "we have $code_type, $code_url, and $code_user to download"
 
 	case "$code_type" in
-	"git_github" ) 
-		post_to_log "I noticed we have a $code_type, attempting an automatic download"
-		github_automated_download $1
-	;;
 	"wget_special" ) 
 		post_to_log "I noticed we have a $code_type, attempting an automatic download"
 		wget_in_dir $1
@@ -40,18 +36,6 @@ automated_download () {
 	"wget_source_forge" ) 
 		post_to_log "I noticed we have a $code_type, attempting an automatic download"
 		sourceforge_automated_download $1
-	;;
-	"pypi" ) 
-		post_to_log "I noticed we have a $code_type, attempting an automatic download"
-		pypi_automated_download $1
-	;;
-	"hg_bitbucket" ) 
-		post_to_log "I noticed we have a $code_type, attempting an automatic download"
-		bitbucket_automated_download $1
-	;;
-	"rsync" ) 
-		post_to_log "I noticed we have a $code_type, attempting an automatic download"
-		rsync_automated_download $1
 	;;
 	* )	
 		post_to_error "code type $code_type does not exist, not source downloaded, exiting"
@@ -84,36 +68,6 @@ eval_user () {
 	eval code_user=\$"{1}_user"
 }
 
-#---------------#
-# Git Functions #
-#---------------#
-
-git_update () {
-# Updates the git repo holding the code 
-# arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	(cd "$code_base_loc/$1/$2" && git pull)
-	(cd "$code_base_loc/$1" && git rev-parse HEAD >> "$code_base_loc/$1_git_data")
-}
-
-github_download_tar () {
-# arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	echo "not implemented"
-}
-
-github_latest () {
-# arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	echo "not implemented"
-}
-
-github_automated_download () {
-# arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	if [ $(current_download_version $1) -ne $(github_latest $1) ]; then
-		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
-	else
-		post_to_log "no new code found for $1, good jerb"
-	fi  
-}
-
 #----------------#
 # Wget Functions #
 #----------------#
@@ -133,42 +87,6 @@ sourceforge_latest () {
 sourceforge_automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
 	if [ $(current_download_version $1) -ne $(sourceforge_latest $1) ]; then
-		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
-	else
-		post_to_log "no new code found for $1, good jerb"
-	fi  
-}
-
-#----------------#
-# PyPi Functions #
-#----------------#
-
-pypi_latest () {
-# arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	echo "not implemented"
-}
-
-pypi_automated_download () {
-# arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	if [ $(current_download_version $1) -ne $(pypi_latest $1) ]; then
-		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
-	else
-		post_to_log "no new code found for $1, good jerb"
-	fi  
-}
-
-#------------------------#
-# BitBucket Hg Functions #
-#------------------------#
-
-bitbucket_latest () {
-# arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	echo "not implemented"
-}
-
-bitbucket_automated_download () {
-# arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	if [ $(current_download_version $1) -ne $(bitbucket_latest $1) ]; then
 		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
 	else
 		post_to_log "no new code found for $1, good jerb"
