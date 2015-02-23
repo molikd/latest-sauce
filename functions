@@ -75,19 +75,43 @@ eval_user () {
 wget_in_dir () {
 # wgets the code in the working direcory
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
-    ( cd "$code_base_loc/$1" && wget $code_url )
+    ( cd "${code_base_loc}/${1}" && wget $code_url )
 	post_to_log "wget on the code for $1"
+}
+
+sourceforge_get_info () {
+# gets the base of the latest source 
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
+# sourceforge.net/projects/bowtie-bio/rss?limit=1&/project=bowtie
+	post_to_log "making the curl call for ${1} to url ${code_url}/${code_user}/rss?limit=1&/project=${1}"
+	curl "${code_url}/${code_user}/rss?limit=1&/project=${1}" >> temp.html
+	eval code_info=`xsltproc sourceforge.xsl temp.html`
+	rm temp.html
+}
+
+sourceforge_wget_in_dir () {
+# actual sourceforge download call 
+# arg 1 is the working directory name, this will always be the tool name, ex: annovar
+	post_to_log "attempting to to wget ${1}"
+	wget_call_loc=`echo $code_info | grep -v '<' | sed -e 's/.*{//' -e 's/}.*//' | sed "s/\/[^\/]*$//"`
+	( cd "${code_base_loc}/${1}" && wget $wget_call_loc )
+
+	ver_info=`echo $code_info | grep -v '<' | sed -e 's/.*{//' -e 's/}.*//' | sed "s/\/[^\/]*$//" | sed "s/\/[^\/]*$//" | sed 's/.*\///'`
+	( cd "${code_base_loc}/${1}" &&  echo $ver_info >> "${1}_data" )
 }
 
 sourceforge_latest () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
-	echo "not implemented"
+	 echo $code_info | grep -v '<' | sed -e 's/.*{//' -e 's/}.*//' | sed "s/\/[^\/]*$//" | sed "s/\/[^\/]*$//" | sed 's/.*\///'
 }
 
 sourceforge_automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
+	sourceforge_get_info $1
 	if [ $(current_download_version $1) -ne $(sourceforge_latest $1) ]; then
 		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
+		sourceforge_get_info $1
+		sourceforge_wget_in_dir $1
 	else
 		post_to_log "no new code found for $1, good jerb"
 	fi  
@@ -98,7 +122,7 @@ sourceforge_automated_download () {
 #---------------#
 
 log_check () {
-#doesn't take any arguments, just checks to make sure that logging is going to work, or its off. 
+# doesn't take any arguments, just checks to make sure that logging is going to work, or its off. 
 	if [ "$logging" = "on" ]; then
 		[ -d "$log_file" ] || echo "error: log directory \"$log_file\" (log files) not found, quiting"; break
 		[ -d "$error_file" ] || echo "error: log directory \"$error_file\" (error files) not found, quiting"; break
