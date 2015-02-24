@@ -38,7 +38,6 @@ automated_download () {
 	;;
 	* )	
 		post_to_error "code type $code_type does not exist, not source downloaded, exiting"
-		break
 	;;
 	esac
 }

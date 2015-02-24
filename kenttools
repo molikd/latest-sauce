@@ -20,7 +20,7 @@ kenttools_wget_in_dir () {
 	( cd "${code_base_loc}/${1}" && wget $wget_call_loc )					
 }
 
-automated_download "kentools"
+automated_download "kenttools"
 
 if [ $(current_download_version "kenttools") -ne $(kenttools_latest) ]; then
 	post_to_log "latest for kenttools on the system and latest remote don't match, time for downloads"
