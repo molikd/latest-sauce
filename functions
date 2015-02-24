@@ -26,7 +26,7 @@ automated_download () {
 	log_check
 	dir_setup "$1"
 
-	post_to_log "we have $code_type, $code_url, and $code_user to download"
+	post_to_log "we have $code_type, $code_url, and $code_user to check"
 
 	case "$code_type" in
 	"wget_special" ) 
