@@ -22,9 +22,9 @@ kenttools_wget_in_dir () {
 
 automated_download "kenttools"
 
-if [ $(current_download_version "kenttools") -ne $(kenttools_latest) ]; then
+if [ "$(current_download_version "kenttools")" != "$(kenttools_latest)" ]; then
 	post_to_log "latest for kenttools on the system and latest remote don't match, time for downloads"
-	sicer_wget_in_dir "kenttools"
+	kenttools_wget_in_dir "kenttools"
 else
 	post_to_log "no new code found for kenttools, good jerb"
 fi

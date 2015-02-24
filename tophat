@@ -23,7 +23,7 @@ tophat_wget_in_dir () {
 
 automated_download "tophat"
 
-if [ $(current_download_version "tophat") -ne $(tophat_latest) ]; then
+if [ "$(current_download_version "tophat")" != "$(tophat_latest)" ]; then
 	post_to_log "latest for tophat on system and latest remote don't match, time for downloads"
 	tophat_wget_in_dir "tophat"
 else

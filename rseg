@@ -22,7 +22,7 @@ rseg_wget_in_dir () {
 
 automated_download "rseg"
 
-if [ $(current_download_version "rseg") -ne $(rseg_latest) ]; then
+if [ "$(current_download_version "rseg")" != "$(rseg_latest)" ]; then
 	post_to_log "latest for rseg on system and latest remote don't match, time for downloads"
 	rseg_wget_in_dir "rseg"
 else

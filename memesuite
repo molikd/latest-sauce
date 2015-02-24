@@ -22,7 +22,7 @@ sicer_wget_in_dir () {
 
 automated_download "memesuite"
 
-if [ $(current_download_version "memesuite") -ne $(memesuite_latest) ]; then
+if [ "$(current_download_version "memesuite")" != "$(memesuite_latest)" ]; then
 	post_to_log "latest for memesuite on system and latest remote don't match, time for downloads"
 	sicer_wget_in_dir "memesuite"
 else
