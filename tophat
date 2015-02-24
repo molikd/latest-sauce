@@ -8,8 +8,6 @@ tophat_url="ccb.jhu.edu/software/tophat/downloads/"
 tophat_type="wget_special"
 tophat_user="tphat"
 
-automated_download "tophat"
-
 tophat_latest () { 
 	curl $tophat_url | grep -o "tophat-2\.[0-9]\.[0-9]..tar.gz" | grep -v "tophat-2\.[0-9]\.[0-9]*[A-Za-z].tar.gz" | sed -e "s/-/ /g" -e "s/\./ /g" | sort -k4 -u | tail -n 1 | sed -e "s/ /-/" -e "s/ /\./g" 
 }
@@ -25,9 +23,9 @@ tophat_wget_in_dir () {
 
 automated_download "tophat"
 
-if [ $(current_download_version "tophat") -ne $(rseg_latest) ]; then
+if [ $(current_download_version "tophat") -ne $(tophat_latest) ]; then
 	post_to_log "latest for tophat on system and latest remote don't match, time for downloads"
-	rseg_wget_in_dir "tophat"
+	tophat_wget_in_dir "tophat"
 else
 	post_to_log "no new code found for tophat, good jerb"
 fi

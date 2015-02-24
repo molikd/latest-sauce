@@ -7,4 +7,24 @@ sicer_url="home.gwu.edu/~wpeng/Software.htm"
 sicer_type="wget_special"
 sicer_user="sicer"
 
+sicer_latest () { 
+	curl $sicer_url | grep -o "SICER_V[0-9]\.[0-9]*.tgz"
+}
+
+sicer_wget_in_dir () {
+	ver_info=`curl $sicer_url | grep -o "SICER_V[0-9]\.[0-9]*.tgz"`
+	( cd "${code_base_loc}/${1}" &&  echo $ver_info >> "${1}_data" )
+
+	post_to_log "attempting to to wget ${1}"
+	wget_call_loc="${sicer_url}/${ver_info}"
+	( cd "${code_base_loc}/${1}" && wget $wget_call_loc )
+}
+
 automated_download "sicer"
+
+if [ $(current_download_version "sicer") -ne $(sicer_latest) ]; then
+	post_to_log "latest for sicer on system and latest remote don't match, time for downloads"
+	sicer_wget_in_dir "sicer"
+else
+	post_to_log "no new code found for sicer, good jerb"
+fi

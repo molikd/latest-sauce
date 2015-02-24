@@ -7,4 +7,24 @@ memesuite_url="http://ebi.edu.au/ftp/software/MEME/index.html"
 memesuite_type="wget_special"
 memesuite_user="meme"
 
+memesuite_latest () { 
+	curl $memesuite_url | grep -o "[0-9]\.[0-9]\.[0-9]/meme.[0-9].[0-9].[0-9].tar.gz" | sed -e "s/\./ /g" | sort -k1 -k4 -k5 -u | tail -n 1 | sed -e "s/ /\./g"
+}
+
+sicer_wget_in_dir () {
+	ver_info=`curl $sicer_url | grep -o "[0-9]\.[0-9]\.[0-9]/meme.[0-9].[0-9].[0-9].tar.gz" | sed -e "s/\./ /g" | sort -k1 -k4 -k5 -u | tail -n 1 | sed -e "s/ /\./g"`
+	( cd "${code_base_loc}/${1}" &&  echo $ver_info >> "${1}_data" )
+
+	post_to_log "attempting to to wget ${1}"
+	wget_call_loc="${memesuite_url}/${ver_info}"
+	( cd "${code_base_loc}/${1}" && wget $wget_call_loc )
+}
+
 automated_download "memesuite"
+
+if [ $(current_download_version "memesuite") -ne $(memesuite_latest) ]; then
+	post_to_log "latest for memesuite on system and latest remote don't match, time for downloads"
+	sicer_wget_in_dir "memesuite"
+else
+	post_to_log "no new code found for memesuite, good jerb"
+fi
