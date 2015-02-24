@@ -3,8 +3,8 @@
 
 source functions
 
-samtools_url=""
+samtools_url="sourceforge.net/projects/"
 samtools_type="wget_source_forge"
-samtools_user=""
+samtools_user="samtools"
 
 automated_download samtools

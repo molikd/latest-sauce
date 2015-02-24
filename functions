@@ -31,7 +31,6 @@ automated_download () {
 	case "$code_type" in
 	"wget_special" ) 
 		post_to_log "I noticed we have a $code_type, attempting an automatic download"
-		wget_in_dir $1
 	;;
 	"wget_source_forge" ) 
 		post_to_log "I noticed we have a $code_type, attempting an automatic download"

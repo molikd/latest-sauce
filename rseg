@@ -5,6 +5,27 @@ source functions
 
 rseg_url="smithlabresearch.org/downloads/"
 rseg_type="wget_special"
-rseg__user="rseg"
+rseg_user="rseg"
+
+rseg_latest () { 
+	curl rseg_url | grep -o "rseg-[0-9].[0-9].[0-9].tar.gz" | head -n 1 
+}
+
+rseg_wget_in_dir () {
+	ver_info=`curl rseg_url | grep -o "rseg-[0-9].[0-9].[0-9].tar.gz" | head -n 1`
+	( cd "${code_base_loc}/${1}" &&  echo $ver_info >> "${1}_data" )
+
+	post_to_log "attempting to to wget ${1}"
+	wget_call_loc="${rseg_url}${ver_info}"
+	( cd "${code_base_loc}/${1}" && wget $wget_call_loc )
+}
 
 automated_download "rseg"
+
+if [ $(current_download_version $1) -ne $(rseg_latest $1) ]; then
+	post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
+	rseg_wget_in_dir $1
+else
+	post_to_log "no new code found for $1, good jerb"
+fi
+
