@@ -8,24 +8,24 @@ rseg_type="wget_special"
 rseg_user="rseg"
 
 rseg_latest () { 
-	curl rseg_url | grep -o "rseg-[0-9].[0-9].[0-9].tar.gz" | head -n 1 
+	curl "${rseg_url}" | grep -o "rseg-[0-9].[0-9].[0-9].tar.gz" | head -n 1 
 }
 
 rseg_wget_in_dir () {
-	ver_info=`curl rseg_url | grep -o "rseg-[0-9].[0-9].[0-9].tar.gz" | head -n 1`
-	( cd "${code_base_loc}/${1}" &&  echo $ver_info >> "${1}_data" )
+	ver_info=`curl "${rseg_url}" | grep -o "rseg-[0-9].[0-9].[0-9].tar.gz" | head -n 1`
+	( cd "${code_base_loc}/rseg" &&  echo $ver_info >> "$rseg_data" )
 
-	post_to_log "attempting to to wget ${1}"
+	post_to_log "attempting to to wget rseg"
 	wget_call_loc="${rseg_url}${ver_info}"
-	( cd "${code_base_loc}/${1}" && wget $wget_call_loc )
+	( cd "${code_base_loc}/rseg" && wget $wget_call_loc )
 }
 
 automated_download "rseg"
 
-if [ $(current_download_version $1) -ne $(rseg_latest $1) ]; then
-	post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
-	rseg_wget_in_dir $1
+if [ $(current_download_version "rseg") -ne $(rseg_latest) ]; then
+	post_to_log "latest for rseg on system and latest remote don't match, time for downloads"
+	rseg_wget_in_dir "rseg"
 else
-	post_to_log "no new code found for $1, good jerb"
+	post_to_log "no new code found for rseg, good jerb"
 fi
 
