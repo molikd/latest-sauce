@@ -106,7 +106,7 @@ sourceforge_latest () {
 sourceforge_automated_download () {
 # arg 1 is the working directory name, this will always be the tool name, ex: annovar
 	sourceforge_get_info $1
-	if [ $(current_download_version $1) -ne $(sourceforge_latest $1) ]; then
+	if [ "$(current_download_version $1)" != "$(sourceforge_latest $1)" ]; then
 		post_to_log "latest for $1 on system and latest remote don't match, time for downloads"
 		sourceforge_get_info $1
 		sourceforge_wget_in_dir $1
